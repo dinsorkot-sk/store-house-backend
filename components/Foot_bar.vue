@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-white border-t border-gray-300 py-6 h-[150px]">
+    <footer class="bg-white border-t border-gray-300 pt-6 ">
         <div class="container mx-auto px-5 md:px-20 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <!-- Left Section -->
             <div class="text-center md:text-left">
