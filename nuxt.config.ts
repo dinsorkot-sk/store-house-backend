@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiUrl: process.env.API_URL || 'http://localhost:3000/api',
-      debug: process.env.DEBUG || false,
+      // debug: process.env.DEBUG || false,
     },
   },
   devtools: { enabled: true },
@@ -20,7 +20,17 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css',
+          href: 'https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.min.css',
+        },
+      ],
+      script: [
+        {
+          src: 'https://cdn.tailwindcss.com',
+          defer: true,
+        },
+        {
+          src: 'https://kit.fontawesome.com/4c6f392e56.js',
+          defer: true,
         },
       ],
       title: 'back-end',
