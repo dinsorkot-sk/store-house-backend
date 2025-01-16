@@ -8,7 +8,10 @@
             <img src="/public/logo/LogoBar2.png" alt="Logo" class="h-5 mr-2" />
           </div>
         </nuxt-link>
-
+<div class="flex gap-4 items-center">
+  <div >Username</div>
+  <div class="rounded-full bg-[#D9D9D9] w-10 h-10">.</div>
+</div>
         <!-- เมนู -->
         <!-- <nav class="flex space-x-6">
             <nuxt-link to="/warehouse" class="text-gray-700 hover:text-orange-600 transition-colors duration-300">เช่าโกดัง</nuxt-link>
