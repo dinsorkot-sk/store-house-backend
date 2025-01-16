@@ -58,7 +58,7 @@ const menuItems = [
   { id: 'approved', path: '/annourequest', label: 'คำขอประกาศ' },
   { id: 'hidden', path: '/Admin_Request_Create', label: 'คำขอสร้าง' },
   { id: 'contact', path: '/contactus', label: 'ติดต่อสอบถาม' },
-  { id: 'portfolio', path: '/portfolio', label: 'ปรับแต่งผลงาน' }
+  { id: 'portfolio', path: '/Admin_Custom', label: 'ปรับแต่งผลงาน' }
 ];
 
 // ตรวจสอบว่าอยู่ในหน้า Admin_Dashboard หรือไม่
