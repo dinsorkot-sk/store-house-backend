@@ -16,7 +16,7 @@
 
 
             <div class="flex flex-col items-center px-32">
-                <nuxt-link to="/">
+                <nuxt-link to="/" class="text-center">
                     <i class="fa-solid fa-warehouse text-9xl" style="color: #ffffff;"></i>
                     <div class="text-4xl text-white font-bold mt-6">
                         ผลงานของเรา
@@ -25,7 +25,7 @@
             </div>
 
             <div class="flex flex-col items-center px-32">
-                <nuxt-link to="/">
+                <nuxt-link to="/"  class="text-center" >
                     <i class="fa-solid fa-earth-americas text-9xl" style="color: #ffffff;"></i>
                     <div class="text-4xl text-white font-bold mt-6">
                         Social media
