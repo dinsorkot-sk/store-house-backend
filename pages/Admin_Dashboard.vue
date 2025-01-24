@@ -121,12 +121,12 @@
                                         <td>
                                             <!-- จัดสถานะให้อยู่ช่องเดียว -->
                                             <div
-                                                class="flex justify-center items-center text-[#FF9800] bg-[#fff7e1] w-full h-[30px] sm:block hidden ">
+                                                class="flex justify-center items-center text-center text-[#FF9800] bg-[#fff7e1] w-full h-[30px] sm:block hidden ">
                                                 รอดำเนินการ
                                             </div>
 
                                             <div
-                                                class="flex justify-center items-center text-[#FF9800] bg-[#fff7e1] w-full h-[30px] sm:hidden block truncate ">
+                                                class="flex justify-center items-center text-center text-[#FF9800] bg-[#fff7e1] w-full h-[30px] sm:hidden block truncate ">
                                                 รอดำเนินการ
                                             </div>
                                         </td>
