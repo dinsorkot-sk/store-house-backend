@@ -363,7 +363,9 @@ import { ref, computed, onMounted, watch } from 'vue';
 import warehouselogo from "../public/logo/logo-warehouse.jpg"
 import atlas from "../public/logo/atlas.png"
 // Sample location data - Replace with actual data
-
+definePageMeta({
+  middleware: 'auth' // ใช้ middleware auth เฉพาะในหน้า login
+});
 const warehouses = [
     {
         "id": 1,

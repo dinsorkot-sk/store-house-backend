@@ -5,7 +5,7 @@
     </headers>
 
     <body>
-        <div class=" bg-[#1e1e1e]  min-h-screen">
+        <div class=" bg-[#1e1e1e]  ">
             <div class="bg-[#fe7702] w-full ">
                 <div class="flex text-white font-medium">
                     <div class="cursor-pointer hover:opacity-80 pb-2 relative menu-item py-3 px-4"
@@ -27,11 +27,11 @@
                 </div>
             </div>
             <div v-if="activeMenu !== 'add'" class=" p-6  bg-white">
-                <div class="grid grid-cols-4 items-center mb-6 ">
-                    <div class="flex items-center">
+                <div class="flex items-center mb-6 justify-between gap-4 ">
+                    <div class="flex items-center gap-4">
                         <i class="fa-solid fa-clipboard fa-2xl" style="color: #fe7702;"></i>
                         <div class="flex justify-center  w-full">
-                            <h1 class="text-2xl font-bold text-black">คำขอสร้าง</h1>
+                            <h1 class="text-lg sm:text-2xl font-bold text-black">คำขอสร้าง</h1>
                         </div>
                     </div>
                     <div></div>
@@ -39,7 +39,7 @@
                         <div class="form-control ">
                             <div class="relative">
                                 <input type="text" v-model="searchQuery" placeholder="Search"
-                                    class="input input-bordered w-full pl-10" />
+                                    class="input input-bordered w-[35vw] pl-10" />
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +75,7 @@
                                     <img :src="item.image" :alt="item.name" class="w-24 h-16 object-cover rounded-lg" />
                                 </td>
                                 <td>
-                                    <div class=" bg-yellow-100 gap-2 py-2 rounded-lg text-yellow-400 text-center">
+                                    <div class=" bg-yellow-100 gap-2 py-2 rounded-lg text-yellow-400 text-center truncate px-2 sm:px-0">
                                         {{ item.status }}
                                     </div>
                                 </td>
@@ -105,24 +105,22 @@
                 </div>
             </div>
 
-            <div v-if="activeMenu == 'add'" class=" px-2 sm:px-20 py-6  bg-black min-h-screen">
+            <div v-if="activeMenu == 'add'" class=" px-2 sm:px-20 py-6   ">
                 <h2 class="text-white text-2xl">ลงผลงาน</h2>
                 <div class="px-6 py-2">
-                    <input class="bg-black min-w-[65vw] border-b-2 my-3" placeholder="ชื่อผลงาน">
+                    <input class=" min-w-[65vw] border-b-2 my-3 text-white bg-transparent " placeholder="ชื่อผลงาน">
                     <!-- Text Editor Toolbar -->
-                    <ckeditor
-        v-if="editor"
-        v-model="data"
-        :editor="editor"
-        :config="config"
-    />
 
-                    <div class="grid grid-cols-1 sm:grid-cols-1 sm:gap-20 bg-black">
+                    <Ckeditor v-if="editor" v-model="data" :editor="editor" :config="config"  />
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-1 sm:gap-20 ">
                         <div class=" items-center gap-2 mb-2 ">
 
-                            <div class="text-white my-3">รูปภาพ ( กรุณาใส่รูปอย่างน้อย 1 รูป แต่ไม่เกิน 4 รูป และขนาดไฟล์ต้องไม่เกิน 2 Mb)</div>
+                            <div class="text-white my-3">รูปภาพ ( กรุณาใส่รูปอย่างน้อย 1 รูป แต่ไม่เกิน 4 รูป
+                                และขนาดไฟล์ต้องไม่เกิน 2 Mb)</div>
 
-                            <div class="grid grid-cols-4 gap-4 max-w-[70vw]">
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[70vw]">
                                 <!-- Upload Button - only show if less than 4 images -->
                                 <div v-if="images.length < 4" @click="triggerFileInput"
                                     class="aspect-square border-2 border-dashed rounded-lg flex items-center justify-center cursor-pointer bg-white hover:bg-gray-50 transition-colors">
@@ -155,15 +153,15 @@
 
 
                 </div>
-                <div class=" flex justify-end gap-5">
+                <div class=" flex justify-end gap-5 items-ends px-5">
                     <button @click="editAnnouncement()"
-                            class=" bg-gray-500 text-white py-2 px-6  transition-colors font-medium">
-                            ยกเลิก
-                        </button>
-                        <button @click="editAnnouncement()"
-                            class=" bg-orange-500 text-white py-2 px-6 hover:bg-orange-600 transition-colors font-medium">
-                            ดูรายละเอียด
-                        </button>
+                        class=" bg-gray-500 text-white py-2 px-6  transition-colors font-medium">
+                        ยกเลิก
+                    </button>
+                    <button @click="Sumbit(data)"
+                        class=" bg-orange-500 text-white py-2 px-6 hover:bg-orange-600 transition-colors font-medium">
+                        ดูรายละเอียด
+                    </button>
                 </div>
             </div>
         </div>
@@ -178,6 +176,8 @@
 <script setup>
 import { ref, computed, onBeforeUnmount } from 'vue'
 import { Ckeditor, useCKEditorCloud } from '@ckeditor/ckeditor5-vue';
+
+
 const activeMenu = ref('all')
 const searchQuery = ref('')
 const currentPage = ref(1)
@@ -222,6 +222,10 @@ const hasNextPage = computed(() => {
 
 const editAnnouncement = (item) => {
     alert("คลิ๊กแล้วนะ เก๊โอม")
+}
+
+const Sumbit = (item) => {
+    console.log(item)
 }
 
 const deleteAnnouncement = (id) => {
@@ -336,35 +340,85 @@ onBeforeUnmount(() => {
 
 })
 
-const cloud = useCKEditorCloud( {
-    version: '44.1.0',
-    premium: true
-} );
 
-const data = ref( '<p>Hello world!</p>' );
 
-const editor = computed( () => {
-    if ( !cloud.data.value ) {
+
+const editor = computed(() => {
+    if (!cloud.data.value) {
         return null;
     }
 
     return cloud.data.value.CKEditor.ClassicEditor;
-} );
+});
 
-const config = computed( () => {
-        if ( !cloud.data.value ) {
+const cloud = useCKEditorCloud({
+    version: '44.1.0',
+    premium: true
+});
+
+const data = ref('<p>Hello world!</p>');
+
+// การตั้งค่า CKEditor รวมถึง Plugins และ Toolbar ที่จะใช้งาน
+const config = computed(() => {
+    if (!cloud.data.value) {
         return null;
     }
 
-    const { Essentials, Paragraph, Bold, Italic } = cloud.data.value.CKEditor;
-    const { FormatPainter } = cloud.data.value.CKEditorPremiumFeatures;
+    const { Essentials, Paragraph, Bold, Italic, FontColor, Underline, Font, Heading } = cloud.data.value.CKEditor;
 
     return {
-        licenseKey: '<YOUR_LICENSE_KEY>',
-        plugins: [ Essentials, Paragraph, Bold, Italic, FormatPainter ],
-        toolbar: [ 'undo', 'redo', '|', 'bold', 'italic', '|', 'formatPainter' ]
+        licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjkyOTkxOTksImp0aSI6ImJkMWQwZGM0LTgwMWUtNGU3Ni1iN2QzLWEzZTQzOGRiNWE0NCIsImxpY2Vuc2VkSG9zdHMiOlsiMTI3LjAuMC4xIiwibG9jYWxob3N0IiwiMTkyLjE2OC4qLioiLCIxMC4qLiouKiIsIjE3Mi4qLiouKiIsIioudGVzdCIsIioubG9jYWxob3N0IiwiKi5sb2NhbCJdLCJ1c2FnZUVuZHBvaW50IjoiaHR0cHM6Ly9wcm94eS1ldmVudC5ja2VkaXRvci5jb20iLCJkaXN0cmlidXRpb25DaGFubmVsIjpbImNsb3VkIiwiZHJ1cGFsIl0sImxpY2Vuc2VUeXBlIjoiZGV2ZWxvcG1lbnQiLCJmZWF0dXJlcyI6WyJEUlVQIl0sInZjIjoiMjE2MjY4YjUifQ.fYTE1z0wCpiLvuqo3yiBmiEv_pI5hjjn1bqBE6DqLHAZBfbFZqn9fMx-YCtUVyRa7XTPtvuJLGIA-O7N1X-etg',
+        plugins: [Font, Essentials, Paragraph, Bold, Italic, FontColor, Underline, Heading],
+        toolbar: ['undo', 'redo', '|', 'fontSize', 'fontFamily', '|', 'bold', 'italic', '|', 'fontColor', 'underline'],
+        fontFamily: {
+            options: [
+                'default',
+                'Arial, Helvetica, sans-serif',
+                'Courier New, Courier, monospace',
+                'Georgia, serif',
+                'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                'Tahoma, Geneva, sans-serif',
+                'Times New Roman, Times, serif',
+                'Trebuchet MS, Helvetica, sans-serif',
+                'Verdana, Geneva, sans-serif'
+            ]
+        },
+        fontSize: {
+            options: [
+                9,
+                11,
+                13,
+                'default',
+                17,
+                19,
+                21
+            ]
+        },
+        fontColor: {
+            // กำหนดสีฟอนต์ที่ต้องการแสดงใน Toolbar
+            colors: [
+                {
+                    color: '#000000', // สีดำ
+                    label: 'Black'
+                },
+                {
+                    color: '#FF0000', // สีแดง
+                    label: 'Red'
+                },
+                {
+                    color: '#008000', // สีเขียว
+                    label: 'Green'
+                }
+            ],
+            // กำหนดค่าเริ่มต้นของฟอนต์
+            default: '#000000'
+        }
+
     };
-} );
+});
+
+
+
 </script>
 
 

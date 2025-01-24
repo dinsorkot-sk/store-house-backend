@@ -3,7 +3,7 @@
     <headers>
         <NavBArUsr />
     </headers>
-    <div class=" bg-black px-20 py-6 min-h-screen">
+    <div class=" bg-black px-5 sm:px-20 py-6 min-h-screen">
         <div class="bg-[#07BDBE] w-full ">
             <div class="flex text-white font-medium">
                 <div class="cursor-pointer hover:opacity-80 pb-2 relative menu-item py-3 px-4"
@@ -25,19 +25,19 @@
             </div>
         </div>
         <div class=" p-6  bg-white">
-            <div class="grid grid-cols-4 items-center mb-6 ">
-                <div class="flex items-center">
+            <div class="flex items-center mb-6 justify-between  gap-4">
+                <div class="flex items-center gap-4">
                     <i class="fa-solid fa-user fa-2xl" style="color: #07bdbe;"></i>
                     <div class="flex justify-center  w-full">
-                        <h1 class="text-2xl font-bold">ติดต่อสอบถาม</h1>
+                        <h1 class="text-md sm:text-2xl font-bold">ติดต่อสอบถาม</h1>
                     </div>
                 </div>
                 <div></div>
-                <div class="relative col-span-2">
+                <div class="relative ">
                     <div class="form-control ">
                         <div class="relative">
                             <input type="text" v-model="searchQuery" placeholder="ค้นหา"
-                                class="input input-bordered w-full pl-10" />
+                                class="input input-bordered w-[35vw] pl-10" />
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -70,7 +70,7 @@
                             <td>{{ item.phone }}</td>
                            
                             <td>
-                                <div class=" bg-yellow-100 gap-2 py-2 rounded-lg text-yellow-400 text-center">
+                                <div class=" bg-yellow-100 gap-2 py-2 rounded-lg text-yellow-400 text-center truncate px-2 sm:px-0">
                                     {{ item.status }}
                                 </div>
                             </td>

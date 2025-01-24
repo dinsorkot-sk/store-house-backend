@@ -10,6 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^44.1.0",
+    "@ckeditor/ckeditor5-build-classic": "^44.1.0",
+    "@ckeditor/ckeditor5-essentials": "^44.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^44.1.0",
     "@ckeditor/ckeditor5-vue": "^7.3.0",
     "@nuxtjs/dotenv": "^1.4.2",
     "nuxt": "^3.15.1",

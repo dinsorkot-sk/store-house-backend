@@ -160,7 +160,7 @@ const config = computed(() => {
     const { Essentials, Paragraph, Bold, Italic, FontColor } = cloud.data.value.CKEditor;
 
     return {
-        licenseKey: '<YOUR_LICENSE_KEY>',
+        licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjkyOTkxOTksImp0aSI6ImJkMWQwZGM0LTgwMWUtNGU3Ni1iN2QzLWEzZTQzOGRiNWE0NCIsImxpY2Vuc2VkSG9zdHMiOlsiMTI3LjAuMC4xIiwibG9jYWxob3N0IiwiMTkyLjE2OC4qLioiLCIxMC4qLiouKiIsIjE3Mi4qLiouKiIsIioudGVzdCIsIioubG9jYWxob3N0IiwiKi5sb2NhbCJdLCJ1c2FnZUVuZHBvaW50IjoiaHR0cHM6Ly9wcm94eS1ldmVudC5ja2VkaXRvci5jb20iLCJkaXN0cmlidXRpb25DaGFubmVsIjpbImNsb3VkIiwiZHJ1cGFsIl0sImxpY2Vuc2VUeXBlIjoiZGV2ZWxvcG1lbnQiLCJmZWF0dXJlcyI6WyJEUlVQIl0sInZjIjoiMjE2MjY4YjUifQ.fYTE1z0wCpiLvuqo3yiBmiEv_pI5hjjn1bqBE6DqLHAZBfbFZqn9fMx-YCtUVyRa7XTPtvuJLGIA-O7N1X-etg',
         plugins: [Essentials, Paragraph, Bold, Italic, FontColor],
         toolbar: ['undo', 'redo', '|', 'bold', 'italic', '|', 'fontColor'],
         fontColor: {
