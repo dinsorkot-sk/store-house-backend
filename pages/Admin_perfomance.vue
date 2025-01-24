@@ -6,70 +6,76 @@
 
     <body class="bg-[#1e1e1e] text-white">
 
-        <div class="flex justify-center min-h-screen my-8">
-            <div class="w-2/5 space-y-8 p-16">
+        <div class="flex justify-center min-h-screen my-8 px-4 sm:px-8 md:px-2 lg:px-24">
+            <div class="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 space-y-8 p-8 sm:p-12  md:p-0">
                 <div class="flex justify-center item-center">
-                    <img src="../public/performan/LogoBar.png" alt="">
+                    <img src="../public/performan/LogoBar.png" alt="Logo" class="w-3/4 sm:w-2/3 md:w-1/2">
                 </div>
 
-                <div class="flex justify-around items-baseline ">
-                    <h1 class="flex justify-center items-center mt-5 font-bold text-3xl ">บริการและผลงานของเรา</h1>
-                    <div v-if="!editMode" @click="editMode = !editMode"
-                        class="flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
-                        เเก้ไข
-                        <i class="fa-solid fa-pen-to-square fa-xl" style="color: #ffffff;"></i>
+                <div class="lg:flex justify-between items-baseline mt-5">
+                    <h1 class="font-bold text-2xl sm:text-3xl md:text-4xl truncate">บริการและผลงานของเรา</h1>
+                    <div class="flex justify-center gap-4 my-2">
+                        <div v-if="!editMode" @click="editMode = !editMode"
+                            class="my-2 flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
+                            เเก้ไข
+                            <i class="fa-solid fa-pen-to-square fa-xl" style="color: #ffffff;"></i>
+                        </div>
                     </div>
 
-                    <div v-if="editMode" @click="btn_save()"
-                        class="flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
-                        บันทึก
-                        <i class="fa-solid fa-floppy-disk fa-xl" style="color: #ffffff;"></i>
+
+                    <div class="flex justify-center gap-4 my-2">
+                        <div v-if="editMode" @click="btn_save()"
+                            class=" flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
+                            บันทึก
+                            <i class="fa-solid fa-floppy-disk fa-xl" style="color: #ffffff;"></i>
+                        </div>
+
+                        <div v-if="editMode" @click="editMode = !editMode"
+                            class="flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
+                            ยกเลิก
+                            <i class="fa-solid fa-rectangle-xmark fa-xl" style="color: #ffffff;"></i>
+                        </div>
                     </div>
 
-                    <div v-if="editMode" @click="editMode = !editMode"
-                        class="flex justify-around items-center text-center h-[40px] w-[100px] bg-[#FE7703] hover:bg-[#d96603] rounded-md text-white cursor-pointer transition duration-200 ease-in-out">
-                        ยกเลิก
-                        <i class="fa-solid fa-rectangle-xmark fa-xl" style="color: #ffffff;"></i>
-                    </div>
                 </div>
 
-                <div class="flex justify-center border-t-2 border-white mt-5 w-full mx-auto"></div>
+                <div class="flex justify-center border-t-2 border-white mt-5 w-full mx-auto "></div>
 
                 <div v-if="!editMode" class="w-full space-y-2">
                     <div class="space-y-1">
-                        <h1>
+                        <h1 class="text-xl sm:text-2xl md:text-3xl">
                             บริการหาโกดังให้เช่า
                         </h1>
-                        <p class="break-words p-3 max-w-xl">
+                        <p class="break-words p-3 max-w-full sm:max-w-xl md:max-w-2xl">
                             ออกแบบเเละสร้างโกดังให้เช่า ขนาด กว้าง 24 เมตร ยาว 16 เมตร เเละสูง 60 เมตร
                         </p>
                     </div>
 
                     <div class="space-y-1">
-                        <h1>
+                        <h1 class="text-xl sm:text-2xl md:text-3xl">
                             คลังสินค้าให้เช่าพรรรวี สมุทรปราการ
                         </h1>
-                        <p class="break-words p-3 max-w-xl">
+                        <p class="break-words p-3 max-w-full sm:max-w-xl md:max-w-2xl">
                             ออกแบบโกดังให้เช่า และสร้างโกดังให้เช่า ขนาด กว้าง 19.4 เมตร ยาว 46.4 และสูง 10.0 เมตร
                             พร้อมงานถม, ปูฟก, ท่อระบายน้ำ, รางวี, สนาม, กำแพงรั้วกันดิน และรั้ว
                         </p>
                     </div>
 
                     <div class="space-y-1">
-                        <h1>
+                        <h1 class="text-xl sm:text-2xl md:text-3xl">
                             โกดังให้เช่า บางพลี สมุทรปราการ
                         </h1>
-                        <p class="break-words p-3 max-w-xl">
+                        <p class="break-words p-3 max-w-full sm:max-w-xl md:max-w-2xl">
                             ออกแบบโครงสร้างคลังสินค้าให้เช่า และสร้างคลังสินค้าให้เช่า ขนาด กว้าง 27 เมตร ยาว 66 เมตร
                             และสูง 14.00 เมตร
                         </p>
                     </div>
 
                     <div class="space-y-1">
-                        <h1>
+                        <h1 class="text-xl sm:text-2xl md:text-3xl">
                             โกดังให้เช่า SK ปทุมธานี
                         </h1>
-                        <p class="break-words p-3 max-w-xl">
+                        <p class="break-words p-3 max-w-full sm:max-w-xl md:max-w-2xl">
                             ออกแบบโกดังให้เช่า และสร้างโกดังให้เช่า ขนาด กว้าง 17 เมตร ยาว 75 เมตร และสูง 5.0 เมตร
                             โกดังให้เช่า SK เฟส 2 ปทุมธานี ออกแบบโกดังให้เช่า และสร้างโกดังให้เช่า ขนาด กว้าง 17 เมตร
                             ยาว 75 เมตร และสูง 5.0 เมตร โกดังให้เช่า SK เฟส 3 ปทุมธานี ออกแบบโกดังให้เช่า
@@ -89,6 +95,7 @@
         </div>
 
     </body>
+
 
 
     <footer>
